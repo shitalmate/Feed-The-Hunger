@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+        box-sizing: border-box;
+         }
+        html, body {
+        overflow-x: hidden;
+        height: 100%;
+         }
+        body {
+        font-family: 'Varela Round', sans-serif;
+        background: black;
+        padding: 0;
+        margin: 0;
+         }
+        h1{
+        text-align: center;
+        padding-top: -60px;
+         }
+        p{
+        text-align: center;
+        padding-top: 30px;
+        padding-left: 80px;
+        padding-right: 80px;
+         }
+        .header {
+        background-color: black;
+        width: 50%;
+        height: 0px;
+        position: fixed;
+        z-index: 10;
+         }
+        .main {
+        height: 20%;
+        margin-top: -130px;
+        padding: 10px 50px;
+        font-size: 30px;
+        color:white;
+         }
+        .nav{
+            background-color: black;
+            text-align: right;
+         }
+        .nav ul{
+            display: inline-flex;
+            list-style: none;
+            color: white;
+         }
+        .nav ul li{
+            width: 150px;
+            margin: 15px;
+            padding: 15px;
+         }
+        .nav ul li a{
+            color: white;
+         }
+        .nav ul li:hover{
+            background-color: grey;
+            border-radius: 5px;
+         }
+		.centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+			font-size: 40px;
+			color:black;
+            transform: translate(-50%, -50%);
+         }
+		 .img {
+            position: relative;
+            text-align: center;
+            color: white;
+         }
+    </style>
+</head>
+<body>
+    <div class="nav">
+                <ul>
+                    <li><a href="main1.html">HOME</a></li>
+                    <li><a href="donate.html">DONATE </a></li>
+					<li><a href="contact.html">CONTACT </a></li>
+                    <li><a href="aboutus">ABOUT </a></li>
+                    
+                </ul>
+    </div>
+    <div class="main">
+        <i><h1 style="text-align: left;">FEED THE HUNGER</h1></i>
+    </div>
+	<div class="img">
+	<img src="img/about.jpg" style="height: 800px;width:1500px;">
+	  <div class="centered"><h1>WHO WE ARE?</h1></div>
+
+	</div>
+	<div class="about" style="color: white;">
+    	<i><h1 style="font-size:60px">OUR MISSION</h1></i>
+		<p style="font-size:30px">Our aim is to provide the food to needy people.
+		<br>
+		This Web-Application for food donation acts as interface between donors and NGOs.
+		<br>
+		Minimizing food wastage and feeding the hunger is our main goal.
+		</p>
+	</div>	
+</body>
+</html>

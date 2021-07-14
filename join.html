@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join Us</title>
+	<style>
+        *{
+        box-sizing: border-box;
+    }
+    html, body {
+        overflow-x: hidden;
+        height: 100%;
+    }
+    body {
+      font-family: 'Varela Round', sans-serif;
+        background: black;
+        padding: 0;
+        margin: 0;
+    }
+    .header {
+        background-color: black;
+        width: 50%;
+        height: 0px;
+        position: fixed;
+        z-index: 10;
+    }
+    .main {
+        height: 20%;
+        margin-top: -130px;
+        padding: 10px 50px;
+        font-size: 30px;
+        color:white;
+    }
+        .nav{
+            background-color: black;
+            text-align: right;
+        }
+        .nav ul{
+            display: inline-flex;
+            list-style: none;
+            color: white;
+        }
+        .nav ul li{
+            width: 150px;
+            margin: 15px;
+            padding: 15px;
+        }
+        .nav ul li a{
+            color: white;
+        }
+        .nav ul li:hover{
+            background-color: grey;
+            border-radius: 5px;
+        }
+        .join input {
+	width: 100%;
+	margin-bottom: 20px;
+       }
+       .join input[ type="text"],input[type="password"],input[type="date"]{
+	border:none;
+	border-bottom: 1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40 px;
+	color:#fff;
+	font-size:16px;
+   }
+  .join input[type="submit"]{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+   }
+    .join input[type="submit"]:hover{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+   }
+	</style>
+</head>
+<body>
+       <div class="nav">
+                <ul>
+                    <li><a href="main1.html"></i>HOME</a></li>
+                    <li><a href="#"></i>CONTACT </a></li>
+                    <li><a href="#"></i>ABOUT </a></li>
+                    
+                </ul>
+
+            
+        </div>
+    <div class="main">
+        <i><h1 style="text-align: left;">FEED THE HUNGER</h1></i>
+    </div>
+    <img src="img/join.png" style="height: 800px;width: 700px;">
+    <div class="join" style="float: right; margin-right: 150px;">
+    	<i><h1 style="color: white;">WANT TO JOIN OUR FAMILY</h1></i>
+    <form action="insert.php" method="POST">
+    	<h2 style="color: white;">NAME:<input type="text" name="name" placeholder="Enter Your Full Name Here" required></h2>
+    	<h2 style="color: white;">MOBILE NO.:<input type="text" name="mnumber" placeholder="Enter Your Mobile No. Here" required></h2>
+    	<h2 style="color: white;">MAIL ID:<input type="text" name="mail" placeholder="Enter Your Email Address Here" required></h2>
+    	
+		<h2 style="color: white;">ADDRESS:<input type="text" name="address" placeholder="Enter Your Address Here" required></h2>
+    	<h2 style="color: white;">CITY:<input type="text" name="city" placeholder="Enter Your city Here" required></h2>
+		<input type="submit" name="" value="SUBMIT">
+    </form>
+    </div>
+</body>
+</html>

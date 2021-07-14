@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>main</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+          *{
+        box-sizing: border-box;
+    }
+    html, body {
+        overflow-x: hidden;
+        height: 100%;
+    }
+    body {
+      font-family: 'Varela Round', sans-serif;
+        background: black;
+        padding: 0;
+        margin: 0;
+    }
+    h1{
+        text-align: center;
+        padding-top: 30px;
+    }
+    p{
+        text-align: center;
+        padding-top: 30px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .header {
+        background-color: black;
+        width: 50%;
+        height: 0px;
+        position: fixed;
+        z-index: 10;
+    }
+    .main {
+        height: 25%;
+        margin-top: -70px;
+        padding: 10px 50px;
+        font-size: 30px;
+        color:white;
+    }
+    #sidebarMenu {
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        margin-top: 60px;
+        transform: translateX(-250px);
+        transition: transform 250ms ease-in-out;
+        background: black;
+    }
+    .menu{
+      list-style: none; 
+        margin:50;
+        padding:0;
+    }
+ 
+    .menu li a{
+        color: #fff;
+        display: block;
+        padding: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    #openSidebarMenu:checked ~ #sidebarMenu {
+        transform: translateX(0);
+    }
+    
+    input#openSidebarMenu{
+        display: none;
+    }
+    .sidebarIconToggle {
+        height: 22px;
+        width: 22px;
+        position: absolute;
+        z-index: 99;
+        top: 22px;
+        left: 15px;
+        transition: all 0.3s;
+        cursor: pointer; 
+		color:black;
+    }
+    .spinner {
+        height: 3px;
+        background-color: #fff;
+        transition: all 0.3s;
+    }
+    .spinner.middle ,
+    .spinner.bottom{
+        margin-top: 3px;
+    }
+    #openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.middle {
+        opacity: 0;
+    }
+    #openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.top {
+        transform: rotate(135deg);
+        margin-top: 8px;
+    }
+    #openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.bottom {
+        transform: rotate(-135deg);
+        margin-top: -9px;
+    }
+    .menu .fa{
+        margin-right: 8px;       
+   }
+    
+    .mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: black;
+  font-size: 35px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+</style>
+</head>
+<body>
+      <div class="header"></div>
+    <input type="checkbox" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner top"></div>
+        <div class="spinner middle"></div>
+        <div class="spinner bottom"></div>
+    </label>
+    <div id="sidebarMenu">
+        <ul class="menu">
+            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>  Profile</a></li>
+            <li><a href="#"><i class="fa fa-inbox" aria-hidden="true"></i>  Inbox</a></li>
+            <li><a href="#"><i class="fa fa-envelope-open-o" aria-hidden="true"></i>  Outbox</a></li>
+            <li><a href="#"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>  Send mail</a></li>
+            <li><a href="#"><i class="fa fa-draft" aria-hidden="true"></i>     Draft</a></li>
+            <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i>  Trash</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>FEED THE HUNGER</h1>
+    </div>
+
+    <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img1.jpg" style="width:100%">
+  <div class="text">“If you can’t feed a hundred people, then feed just one.”</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img2.jpg" style="width:100%">
+  <div class="text">"If you want to eliminate hunger, everybody has to be involved."</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img3.jpg" style="width:100%">
+  <div class="text">"Overcoming poverty is not a task of charity, it is an act of justice."</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+ 
+ <h1 style="color:blue;">How we work</h1>
+ <p style="color: white";>We aim to redistribute surplus food to those who are in need of it. If you have excess food from an event, party, wedding etc, please call our helpline, our volunteers will collect the excess food from you and distribute it among people who need it.  The excess food will be checked for quality because lack of proper refrigeration and storage tend to spoil food.</p>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>
